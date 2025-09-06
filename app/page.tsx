@@ -1,103 +1,176 @@
+'use client';
+
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Globe, Youtube, Music2, ChevronRight, ArrowDown } from "lucide-react";
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-export default function Home() {
+type LinkFromDB = {
+  _id: string;
+  Name: string;
+  Links: string;
+};
+
+export default function LinkPage() {
+  const [links, setLinks] = useState<LinkFromDB[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('/api/links');
+        if (!response.ok) {
+          throw new Error('Failed to fetch links');
+        }
+        const data = await response.json();
+        setLinks(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchLinks();
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
+
+  const getIconForLink = (name: string) => {
+    if (name.toLowerCase().includes('youtube')) {
+      return <Youtube size={20} />;
+    }
+    if (name.toLowerCase().includes('tiktok')) {
+      return <Music2 size={20} />;
+    }
+    return <Globe size={20} />;
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="relative flex flex-col items-center justify-center min-h-screen w-full text-white p-6 overflow-hidden">
+      <Image
+        src="/background.webp"
+        alt="Forest background"
+        layout="fill"
+        objectFit="cover"
+        className="-z-20"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent -z-10" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="w-full max-w-md flex flex-col items-center text-center gap-4">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <Image
+            src="/logo.webp"
+            alt="Logo"
+            width={150}
+            height={150}
+            className="drop-shadow-lg"
+          />
+        </motion.div>
+
+        <motion.h1
+          className="text-3xl font-bold drop-shadow-md mt-2"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Ambalan SMAIT Ummul Quro{' '}
+          <Link href="/admin" title="Admin Access" style={{ cursor: 'default', textDecoration: 'none' }}>
+            Bogor
+          </Link>
+        </motion.h1>
+
+        <motion.div
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="my-6"
+        >
+            <motion.div
+              className="flex items-center justify-center gap-3 text-white/80"
+              animate={{ y: [0, 5, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <ArrowDown size={18} />
+              <p className="tracking-widest uppercase text-sm">Our Social Media</p>
+              <ArrowDown size={18} />
+            </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="w-full flex flex-col gap-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            links.map((link) => (
+              <motion.a
+                key={link._id}
+                href={link.Links}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={itemVariants}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Button
+                  variant="outline"
+                  className="w-full h-16 bg-white/10 border border-white/25 backdrop-blur-sm text-white text-lg rounded-xl hover:bg-white/20 transition-colors duration-300 flex justify-between items-center px-6"
+                >
+                  <div className="flex items-center gap-3">
+                    {getIconForLink(link.Name)}
+                    <span>{link.Name}</span>
+                  </div>
+                  <ChevronRight size={22} className="text-white/60" />
+                </Button>
+              </motion.a>
+            ))
+          )}
+
+          <motion.div
+            className="w-full text-center text-white/80 text-base mt-6"
+            variants={itemVariants}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <p className="font-semibold">@passusuq • @focus_smaituq</p>
+          </motion.div>
+        </motion.div>
+      </div>
+    </main>
   );
 }
+

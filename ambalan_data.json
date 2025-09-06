@@ -1,0 +1,562 @@
+{
+  "socialLinks": {
+    "instagram": "https://instagram.com/ambalan_smaituq",
+    "youtube": "https://m.youtube.com/channel/UCBF7Y71LydV27Kkt3ALJ49w",
+    "tiktok": "https://vt.tiktok.com/ZSCmH6cn/"
+  },
+  "copyright": "© 2025 Ambalan SMAITUQ.",
+  "navigation": [
+    {
+      "title": "Organisasi",
+      "children": [
+        {
+          "title": "Struktur Organisasi",
+          "path": "/struktur-organisasi"
+        },
+        {
+          "title": "Filosofi Logo",
+          "path": "/filosofi"
+        },
+        {
+          "title": "Achievements",
+          "path": "/achievements"
+        }
+      ]
+    },
+    {
+      "title": "Galeri",
+      "children": [
+        {
+          "title": "Foto Kegiatan",
+          "path": "/foto-kegiatan"
+        },
+        {
+          "title": "Foto Purna Ambalan",
+          "path": "/foto-purna-ambalan"
+        }
+      ]
+    },
+    {
+      "title": "Seragam",
+      "children": [
+        {
+          "title": "Seragam Ambalan SMAIT Ummul Quro",
+          "path": "/seragam"
+        }
+      ]
+    },
+    {
+      "title": "Materi Pramuka",
+      "children": [
+        {
+          "title": "Materi Pembelajaran",
+          "path": "/materi-pramuka"
+        }
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "label": "Anggota Aktif",
+      "value": "154+"
+    },
+    {
+      "label": "Prestasi",
+      "value": "25+"
+    },
+    {
+      "label": "Kegiatan/Tahun",
+      "value": "12+"
+    },
+    {
+      "label": "Materi Pembelajaran",
+      "value": "50+"
+    }
+  ],
+  "leadershipPeriods": [
+    {
+      "year": "2015/2016",
+      "image": null,
+      "putri": {
+        "pradana": "Enargita Pianissa",
+        "kerani": "Salma Sofarinah",
+        "pemangku": "Prilly N.",
+        "juru": "Qurrotul Aini"
+      },
+      "putra": {
+        "pradana": "Bima Galang Buana",
+        "kerani": "M. Rizal Abdullah",
+        "pemangku": "Gilang",
+        "juru": "Haidar Abdurahman"
+      }
+    },
+    {
+      "year": "2016/2017",
+      "image": "/images/Foto/background.jpg",
+      "putri": {
+        "pradana": "Elsa Shafira Ramadhani",
+        "pemangku": "Nurwanti Ibtisamah Sagala",
+        "juru": "Dinda Nadhifah Aprillia",
+        "kerani": "Aninta Putri Salsabila"
+      },
+      "putra": {
+        "pradana": "Mochammad Azkal Azkiya",
+        "pemangku": "M.Thareq Rain Akbar",
+        "juru": "Ahmed Ariq Assabiq",
+        "kerani": "Muhammad Farhan"
+      }
+    },
+    {
+      "year": "2017/2018",
+      "image": "/images/Foto/a12c2bf9-4c83-4c3f-8a55-42fbd54d5969-1.webp",
+      "putri": {
+        "pradana": "Aulia Rohimah",
+        "juruAdat": "Dhiya Kamila Sundara",
+        "juru": "Haliza Putri Adilah Febriyana",
+        "kerani": "Naura Azzahta"
+      },
+      "putra": {
+        "pradana": "Hilal Ramadhan Utomo",
+        "pemangku": "Umar Faruqi",
+        "juru": "Nabiel Azzamy",
+        "kerani": "M. Fariq Umri"
+      }
+    },
+    {
+      "year": "2018/2019",
+      "image": "/images/Foto/a.webp",
+      "putri": {
+        "pradana": "Rahmadanti Widya W",
+        "pemangku": "Naura Shofwah Ardini",
+        "kerani": "Latifah Qurrota 'aini",
+        "juru": "khansa Fairuz Citra"
+      },
+      "putra": {
+        "pradana": "Ikhwan Ahmad Mujahid",
+        "pemangku": "Fauzan Agusta Utomo",
+        "kerani": "Sultan Abdul Ghaffar",
+        "juru": "Azzam Ihsanudin"
+      }
+    },
+    {
+      "year": "2019/2020",
+      "image": "/images/Foto/background2122.webp",
+      "putri": {
+        "pradana": "Sabila Ramadhania",
+        "pemangku": "Nabilah Dinah",
+        "kerani": "Fildza Maulida Fairuz",
+        "juru": "Tarissa P. M"
+      },
+      "putra": {
+        "pradana": "Adril Ardiansyah",
+        "pemangku": "Azfa Nahdi",
+        "kerani": "Maulana Sava Muhammad",
+        "juru": "M. Yusuf Diko Prasetyo"
+      }
+    },
+    {
+      "year": "2020/2021",
+      "image": "/images/Foto/20-21.jpg",
+      "putra": {
+        "pradana": "Zainal Muttaqin",
+        "pemangku": "Muhammad Ikhwan Fathin Dzikra",
+        "kerani": "Muhammad Ilham Umri",
+        "juruUang": "Zidan Amirudin",
+        "kadivTeknik": "Alif Kurnia Pratama",
+        "kadivOperasional": "Akmal Naufal Rabbani",
+        "kadivPengmas": "Izzudin Rizqullah",
+        "kadivHumas": "Muhammad Albani Kafka L.H."
+      },
+      "putri": {
+        "pradana": "Istiqomatunnisa",
+        "pemangku": "Tafida Rizkia Ula",
+        "kerani": "Elvanya Nandayu Bunga Satiko",
+        "juruUang": "Farah Khansa Putri",
+        "kadivTeknik": "Deviena Hanna Mutmainnah",
+        "kadivOperasional": "Shabrina Rahadatul Aisy",
+        "kadivPengmas": "Rezkia Hafidzah",
+        "kadivHumas": "Nafhana Silmi"
+      }
+    },
+    {
+      "year": "2021/2022",
+      "image": "/images/Foto/21-22.jpg",
+      "putra": {
+        "pradana": "Putraku Fawzan A",
+        "pemangku": "Liuray Alif",
+        "kerani": "Farid Multahadi",
+        "juruUang": "Althaf Bani Zachari S",
+        "kadivTeknik": "Hamka Habibi Hidayatullah",
+        "kadivOperasional": "Alaudin Indra Fata",
+        "kadivPengmas": "Zaydan Althar Yazid"
+      },
+      "putri": {
+        "pradana": "Amalia Amatullah S",
+        "pemangku": "Haniyyah Nafisa",
+        "kerani": "Athira Fairuzuma A",
+        "juruUang": "Ridha Muthiah A",
+        "kadivTeknik": "Taqiyya Fakhira N",
+        "kadivOperasional": "Alisya Carbelia Anwar",
+        "kadivPengmas": "Naura Alifa C.N"
+      }
+    },
+    {
+      "year": "2022/2023",
+      "image": "/images/Foto/22-23.jpg",
+      "putra": {
+        "pradana": "Hamka Habibi Hidayatullah",
+        "pemangku": "Ahmad Wafa",
+        "kerani": "Muhammad Fatih Badruzzaman",
+        "juruUang": "Fatih Dhiayul Hilm",
+        "kadivTeknik": "Muhamad Gavin Rajwa Quranridho",
+        "kadivOperasional": "Naftali Arrayyan",
+        "kadivPengmas": "Rasyad Aulia Dhava",
+        "kadivHumas": "Aldan Aulia Rafif"
+      },
+      "putri": {
+        "pradana": "Naisa Nuzilla Iska",
+        "pemangku": "Nadia Ailsa Diyanti",
+        "kerani": "Zahira Salsabila Khairunnisa",
+        "juruUang": "Hasna Fatiha Jinan",
+        "kadivTeknik": "Aqiilah Khairunnisa Azahrah",
+        "kadivOperasional": "Salma Hidayaturrobina",
+        "kadivPengmas": "Nawra Ghaya Tsabita",
+        "kadivHumas": "Isyi Karimah"
+      }
+    },
+    {
+      "year": "2023/2024",
+      "image": "/images/Foto/23-24.jpg",
+      "putra": {
+        "pradana": "Akhmad Syamil Aydin",
+        "pemangku": "Haidar Mutawally Halim",
+        "kerani": "Ahmad Fawwaz Reswara",
+        "juruUang": "Muhammad Naufal Firdaus Lazuardi",
+        "kadivTeknik": "Lathiful Lisan",
+        "kadivPengembangan": "Muhammad Rizki Athalla",
+        "kadivPengmas": "Muhammad Athaya Habibi Djawa",
+        "kadivHumas": "Ahmad Shofwan Isy Kariman",
+        "kadivBisnis": "Salman Zhafran"
+      },
+      "putri": {
+        "pradana": "Amira Amatullah Karimah",
+        "pemangku": "Wafiqah Syahla Widad",
+        "kerani": "Reihana Fitria Yanuar",
+        "juruUang": "Kaylila Riani Maidi",
+        "kadivTeknik": "Aliya Tazkia Hanum",
+        "kadivPengembangan": "Arisa Novia Rosyadah",
+        "kadivPengmas": "Nazifa Nur Amalina",
+        "kadivHumas": "Yoshiko Ena",
+        "kadivBisnis": "Buti Lubna Yurdha"
+      }
+    },
+    {
+      "year": "2024/2025",
+      "image": "/images/Foto/24-25.jpg",
+      "putra": {
+        "pradana": "Darma Bachtiar Lubis",
+        "pemangku": "Abdullah Yaumul Rahmat",
+        "kerani": "Jazid Gumilar",
+        "juruUang": "Arfan Aqila Ihsan",
+        "kadivTeknik": "Mohammad Aldhowi Ilmi Arsyad",
+        "kadivPengembangan": "Abian Excel Hidayat",
+        "kadivPengmas": "Muhammad Athaya Habibi Djawa",
+        "kadivHumas": "Dhafin Zharfan Ghassani",
+        "kadivBisnis": "Hanif Putra Abyan"
+      },
+      "putri": {
+        "pradana": "Azkahaura Fadhila Syarwani",
+        "pemangku": "Zahira Ratnadhita",
+        "kerani": "Alya Mukhbita",
+        "juruUang": "Aida Maheswari Suryantoro",
+        "kadivTeknik": "Raisya Nurjulianti",
+        "kadivPengembangan": "Andhiny Putri Salsabila",
+        "kadivPengmas": "Maulida Dzikra Hanifah",
+        "kadivHumas": "Aulia Azzahra",
+        "kadivBisnis": "Nathifa Khairiya Nugraha"
+      }
+    }
+  ],
+  "pages": {
+    "tentangKami": {
+      "title": "Tentang Kami",
+      "identitas": {
+        "title": "Identitas Ambalan",
+        "alamat": {
+          "nama": "SMAIT Ummul Quro",
+          "jalan": "Jl. Raya Dramaga No. 123",
+          "kecamatan": "Dramaga, Bogor, Jawa Barat 16680",
+          "negara": "Indonesia",
+          "gudep": "Gudep 06-215 & 06-216"
+        },
+        "info": {
+          "namaAmbalan": "Ambalan SMAIT Ummul Quro",
+          "tingkat": "Penegak"
+        }
+      },
+      "sejarah": {
+        "title": "Sejarah Ambalan UQ",
+        "content": [
+          "Ambalan SMAIT Ummul Quro didirikan pada tahun 2010 sebagai wadah pengembangan karakter dan kepemimpinan siswa melalui kegiatan kepramukaan. Sejak awal berdirinya, ambalan ini telah berkomitmen untuk membentuk generasi muda yang beriman, bertakwa, dan memiliki jiwa kepemimpinan yang kuat.",
+          "Dengan motto \"Satyaku Kudarmakan, Darmaku Kubaktikan\", ambalan ini terus berkembang dan menghasilkan alumni-alumni yang berprestasi di berbagai bidang. Kegiatan rutin seperti latihan mingguan, kemah, dan bakti sosial menjadi sarana pembentukan karakter yang integral.",
+          "Hingga saat ini, Ambalan SMAIT Ummul Quro telah meluluskan ratusan anggota yang tersebar di berbagai perguruan tinggi dan profesi, dengan tetap menjunjung tinggi nilai-nilai kepramukaan dan Islam."
+        ]
+      },
+      "prestasi": {
+        "title": "Prestasi & Pencapaian",
+        "categories": [
+          {
+            "title": "Tingkat Nasional",
+            "achievements": [
+              "Juara 2 Lomba Pionering Nasional 2023",
+              "Juara 3 Jambore Nasional 2022",
+              "Peserta Terbaik Raimuna Nasional 2021"
+            ]
+          },
+          {
+            "title": "Tingkat Daerah",
+            "achievements": [
+              "Juara 1 Lomba Tali Temali 2023",
+              "Juara 1 Lomba Sandi 2023",
+              "Juara 2 Lomba P3K 2022"
+            ]
+          },
+          {
+            "title": "Prestasi Lainnya",
+            "achievements": [
+              "Ambalan Terbaik Kwarcab 2023",
+              "Penghargaan Bakti Sosial 2022",
+              "Sertifikat ISO Kepramukaan 2021"
+            ]
+          }
+        ]
+      }
+    },
+    "fotoKegiatan": {
+      "title": "Foto Kegiatan",
+      "categories": [
+        {
+          "id": "all",
+          "name": "Semua Kegiatan"
+        },
+        {
+          "id": "latihan",
+          "name": "Latihan Rutin"
+        },
+        {
+          "id": "kemah",
+          "name": "Kemah & Perkemahan"
+        },
+        {
+          "id": "lomba",
+          "name": "Lomba & Kompetisi"
+        },
+        {
+          "id": "baksos",
+          "name": "Bakti Sosial"
+        }
+      ],
+      "photos": [
+        {
+          "id": 1,
+          "title": "Latihan Tali Temali",
+          "category": "latihan",
+          "date": {
+            "$date": "2024-01-15T00:00:00.000Z"
+          },
+          "location": "Aula SMAIT UQ",
+          "image": "/images/Foto/Foto.jpeg",
+          "participants": 45
+        },
+        {
+          "id": 2,
+          "title": "Kemah Bakti 2024",
+          "category": "kemah",
+          "startDate": {
+            "$date": "2024-02-20T00:00:00.000Z"
+          },
+          "endDate": {
+            "$date": "2024-02-22T00:00:00.000Z"
+          },
+          "location": "Gunung Salak",
+          "image": "/images/Foto/background.jpg",
+          "participants": 120
+        },
+        {
+          "id": 3,
+          "title": "Lomba Pionering",
+          "category": "lomba",
+          "date": {
+            "$date": "2024-03-10T00:00:00.000Z"
+          },
+          "location": "Lapangan Sekolah",
+          "image": "/images/Foto/a.webp",
+          "participants": 80
+        },
+        {
+          "id": 4,
+          "title": "Bakti Sosial Ramadan",
+          "category": "baksos",
+          "date": {
+            "$date": "2024-03-25T00:00:00.000Z"
+          },
+          "location": "Panti Asuhan Al-Hidayah",
+          "image": "/images/Foto/background2122.webp",
+          "participants": 60
+        }
+      ]
+    },
+    "fotoPurnaAmbalan": {
+      "title": "Foto Purna Ambalan",
+      "subtitle": "Kenangan Indah Para Alumni",
+      "purnaData": [
+        {
+          "id": 1,
+          "year": "2023",
+          "title": "Purna Ambalan Angkatan 2023",
+          "image": "/images/Foto/Foto.jpeg",
+          "graduates": 25,
+          "achievements": [
+            "Juara 1 Lomba Tali Temali",
+            "Peserta Jambore Nasional"
+          ],
+          "date": {
+            "$date": "2023-12-15T00:00:00.000Z"
+          },
+          "quote": "Terima kasih atas dedikasi dan semangat yang telah kalian tunjukkan. Semoga ilmu dan pengalaman di Ambalan dapat bermanfaat di masa depan."
+        },
+        {
+          "id": 2,
+          "year": "2022",
+          "title": "Purna Ambalan Angkatan 2022",
+          "image": "/images/Foto/background.jpg",
+          "graduates": 30,
+          "achievements": [
+            "Juara 2 Pionering",
+            "Bakti Sosial Terbaik"
+          ],
+          "date": {
+            "$date": "2022-12-20T00:00:00.000Z"
+          },
+          "quote": "Terima kasih atas dedikasi dan semangat yang telah kalian tunjukkan. Semoga ilmu dan pengalaman di Ambalan dapat bermanfaat di masa depan."
+        },
+        {
+          "id": 3,
+          "year": "2021",
+          "title": "Purna Ambalan Angkatan 2021",
+          "image": "/images/Foto/a.webp",
+          "graduates": 28,
+          "achievements": [
+            "Ambalan Terbaik",
+            "Prestasi Akademik"
+          ],
+          "date": {
+            "$date": "2021-12-18T00:00:00.000Z"
+          },
+          "quote": "Terima kasih atas dedikasi dan semangat yang telah kalian tunjukkan. Semoga ilmu dan pengalaman di Ambalan dapat bermanfaat di masa depan."
+        }
+      ]
+    },
+    "materiPramuka": {
+      "title": "Materi Pembelajaran",
+      "subtitle": "12 Materi Pramuka yang Wajib Dikuasai",
+      "materials": [
+        {
+          "id": 1,
+          "title": "Fungsi & Penggunaan Scarf",
+          "description": "Cara menggunakan scarf pramuka dengan benar",
+          "image": "/images/imags/scarf.jpg",
+          "presentationSvg": "/images/imags/0001.svg"
+        }
+      ]
+    },
+    "seragamPramuka": {
+      "slider": [
+        {
+          "src": "/images/imags/pramuka.jpg",
+          "alt": "Seragam Pramuka",
+          "title": "Seragam Pramuka"
+        },
+        {
+          "src": "/images/imags/ambalan.jpg",
+          "alt": "Seragam Ambalan",
+          "title": "Seragam Ambalan"
+        }
+      ]
+    },
+    "strukturOrganisasi": {
+      "title": "Struktur Organisasi",
+      "subtitle": "Periode 2024/2025",
+      "pembina": {
+        "title": "Pembina Ambalan",
+        "name": "Ustadz/Ustadzah Pembina"
+      },
+      "struktur": [
+        {
+          "jabatan": "Pradana Putra",
+          "nama": "Ahmad Fadhil Rahman",
+          "periode": "2024/2025"
+        },
+        {
+          "jabatan": "Pradana Putri",
+          "nama": "Siti Aisyah Nurhaliza",
+          "periode": "2024/2025"
+        },
+        {
+          "jabatan": "Kerani Putra",
+          "nama": "Muhammad Rizki Pratama",
+          "periode": "2024/2025"
+        },
+        {
+          "jabatan": "Kerani Putri",
+          "nama": "Fatimah Az-Zahra",
+          "periode": "2024/2025"
+        }
+      ]
+    },
+    "achievements": {
+      "slider": [
+        {
+          "id": 1,
+          "src": "/images/imags/0004.svg",
+          "alt": "Pencapaian Ambalan",
+          "title": "Pencapaian Ambalan",
+          "description": "Pencapaian Ambalan"
+        },
+        {
+          "id": 2,
+          "src": "/images/imags/0005.svg",
+          "alt": "Pencapaian Ambalan",
+          "title": "Pencapaian Ambalan",
+          "description": "Pencapaian Ambalan"
+        }
+      ]
+    },
+    "filosofi": {
+      "putra": {
+        "logo": "images/logo/L2.png",
+        "name": "SHALAHUDIN AL AYUBI",
+        "explanation": [
+          "Lambang yang berbentuk perisai berarti seorang penegak harus mempunyai perisai diri untuk mempertahankan dirinya dari godaan-godaan atau ajakan-ajakan dari hal-hal yang tidak baik.",
+          "Lima bintang menggambarkan sholat lima waktu. Artinya seorang penegak dapat menyinergikan antara amal ibadah dengan aktivitasnya.",
+          "Siluet Shalahuddin Al Ayyubi menggambarkan seseorang yang dapat membebaskan Palestina dengan kemuliaan dan kerja keras, sehingga Al-Aqsa bisa dibebaskan bukan hanya dengan kekuatan, melainkan dengan keimanan dan kemanusiaan. Itulah yang menjadi ciri khas Ambalan SMAIT Ummul Quro Bogor.",
+          "Tulisan Shalahuddin Al Ayyubi berarti seorang penegak putra harus memiliki jiwa kepemimpinan dengan kekuatan iman dan takwa sehingga dapat memimpin pasukannya ke jalan yang lebih baik.",
+          "Pedang scimitar berpasangan, pedang ini senjata khas umat muslim yang digunakan pasukan serdadu muslim, karena ketajaman pedang ini sehingga melambangkan bahwa seorang penegak memiliki keseimbangan, ketajaman pikiran.",
+          "Tulisan Ksatria, Jaya, Imana yang artinya selain amanat Ambalan yaitu seorang ksatria yang akan berjaya hanya dengan keimanan yang kuat."
+        ]
+      },
+      "putri": {
+        "logo": "images/logo/L3.png",
+        "name": "FATHIMAH AZ ZAHRA",
+        "explanation": [
+          "Siluet Fatimah Az Zahra melambangkan seorang penegak putri harus selalu menjaga dirinya sebagai seorang muslimah dengan menutup auratnya.",
+          "Tulisan Fatimah Az Zahra artinya seorang penegak putri harus mengedepankan kesucian seperti halnya Fatimah Az Zahra sebagai Penghulu Putri Ahli Surga.",
+          "Selendang berarti keanggunan seorang muslimah. Artinya perjuangan atau pengorbanan sekeras apapun tidak akan menghilangkan keanggunannya sebagai muslimah.",
+          "Tulisan Putri, Cahaya, Imana yang berarti selain sebagai amanat ini juga berarti bahwa seorang putri akan bercahaya apabila iman yang tertanam pada dirinya sangat kuat.",
+          "Lambang tunas kelapa artinya landasan aktivitas seorang penegak harus selalu dengan trisatya dan dasa darma.",
+          "Tali coklat disisi perisai, berarti ikatan persatuan merupakan perekat perbedaan di NKRI."
+        ]
+      }
+    }
+  }
+}
