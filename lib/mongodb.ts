@@ -1,18 +1,12 @@
 // lib/mongodb.ts
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-<<<<<<< HEAD
-if (!process.env.MONGO_URL) {
-  throw new Error('Invalid/Missing environment variable: "MONGO_URL"');
-=======
 const uri = process.env.MONGO_URL;
 
 if (!uri) {
-  throw new Error("Please add your Mongo URI to .env.local");
->>>>>>> b74a6056e9e3fdc1d0c9ddd4e10828d0df102964
+  throw new Error("Please add your Mongo URI to .env.local or set MONGO_URL in the environment");
 }
 
-const uri = process.env.MONGO_URL;
 // Reinstated standard options for better compatibility and error handling with Atlas.
 const options = {
   serverApi: {
@@ -22,20 +16,12 @@ const options = {
   },
 };
 
-// Augment global so `global._mongoClientPromise` is typed.
-declare global {
-  // Using `var` in a `declare global` block is the recommended approach for
-  // attaching properties to the Node.js global object in TypeScript.
-  var _mongoClientPromise: Promise<MongoClient> | undefined;
-}
-
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
-<<<<<<< HEAD
-// Extend the NodeJS.Global interface to include our cached promise
+// Augment global so `global._mongoClientPromise` is typed for development.
 declare global {
-  // eslint-disable-next-line no-var
+  // Using `var` in a `declare global` block is the recommended approach.
   var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
@@ -52,19 +38,6 @@ if (process.env.NODE_ENV === "development") {
   clientPromise = global._mongoClientPromise;
 } else {
   // In production mode, it's best to not use a global variable.
-=======
-if (process.env.NODE_ENV === "development") {
-  // Reuse connection in development to avoid exhausting connections on HMR.
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
-  }
-  // TypeScript knows this is Promise<MongoClient> | undefined on the global, but
-  // we just checked and initialized above, so non-null assertion is safe here.
-  clientPromise = global._mongoClientPromise as Promise<MongoClient>;
-} else {
-  // In production, create a new client for each lambda invocation.
->>>>>>> b74a6056e9e3fdc1d0c9ddd4e10828d0df102964
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }
