@@ -9,7 +9,7 @@
 // --------------------
 
 // Import the 'fs' (File System) module to read the file
-const fs = require('fs');
+import fs from 'fs';
 
 // Define the filename
 const fileName = 'ambalan_data.json';
