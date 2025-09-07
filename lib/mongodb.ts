@@ -15,17 +15,24 @@ const options: MongoClientOptions = {
   },
 };
 
+// Buat type yang benar untuk global
+declare global {
+  // eslint-disable-next-line no-var
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
+}
+
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
-// Ensure we reuse client in dev (hot reload friendly)
 if (process.env.NODE_ENV === "development") {
-  if (!(global as any)._mongoClientPromise) {
+  // Reuse connection di mode dev (biar ga bikin banyak koneksi tiap reload)
+  if (!global._mongoClientPromise) {
     client = new MongoClient(uri, options);
-    (global as any)._mongoClientPromise = client.connect();
+    global._mongoClientPromise = client.connect();
   }
-  clientPromise = (global as any)._mongoClientPromise;
+  clientPromise = global._mongoClientPromise;
 } else {
+  // Di production selalu bikin client baru
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }
