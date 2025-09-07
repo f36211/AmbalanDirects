@@ -1,15 +1,19 @@
 import { NextResponse } from 'next/server';
 import { SignJWT } from 'jose';
-import { cookies } from 'next/headers';
 
 export async function POST(request: Request) {
-  const { username, password } = await request.json();
+  const body: { username?: string; password?: string } = await request.json();
+  const { username, password } = body;
+
+  if (!process.env.JWT_SECRET) {
+    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 });
+  }
 
   if (
     username === process.env.ADMIN_USERNAME &&
     password === process.env.ADMIN_PASSWORD
   ) {
-    const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+  const secret = new TextEncoder().encode(process.env.JWT_SECRET);
     const token = await new SignJWT({ username, role: 'admin' })
       .setProtectedHeader({ alg: 'HS256' })
       .setIssuedAt()

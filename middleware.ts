@@ -20,7 +20,7 @@ export async function middleware(request: NextRequest) {
     
     // If verification is successful, allow the request to proceed.
     return NextResponse.next();
-  } catch (error) {
+  } catch {
     // If verification fails, redirect to the login page.
     return NextResponse.redirect(new URL('/login', request.url));
   }

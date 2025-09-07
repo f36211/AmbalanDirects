@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Globe, Youtube, Music2, ChevronRight, ArrowDown } from "lucide-react";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -37,7 +38,7 @@ export default function LinkPage() {
     fetchLinks();
   }, []);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -47,7 +48,7 @@ export default function LinkPage() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
