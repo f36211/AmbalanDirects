@@ -489,7 +489,7 @@ export default function LinkPage() {
           }}
         >
           Ambalan SMAIT Ummul Quro{' '}
-          <Link href="/admin" title="Admin Access" className="cursor-default no-underline hover:text-yellow-300 transition-colors">
+          <Link href="/admin" title="Admin Access" className="cursor-default no-underline">
             Bogor
           </Link>
         </motion.h1>
