@@ -29,16 +29,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const sessionToken = request.cookies.get('session')?.value;
 
-  console.log('Middleware triggered for:', pathname);
-  console.log('Session token:', sessionToken);
-  if (sessionToken) {
-    try {
-      const { payload } = await jwtVerify<JwtPayload>(sessionToken, getJwtSecretKey());
-      console.log('Token payload:', payload);
-    } catch (error) {
-      console.warn('Token verification failed:', error);
-    }
-  }
+  
 
   // --- Redirect logged-in users from the login page ---
   if (pathname === '/login') {

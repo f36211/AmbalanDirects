@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { SignJWT } from 'jose';
+import { cookies } from 'next/headers';
 
 export async function POST(request: Request) {
   const { username, password } = await request.json();
@@ -17,11 +18,11 @@ export async function POST(request: Request) {
     const token = await new SignJWT({ username, role: 'admin' })
       .setProtectedHeader({ alg: 'HS256' })
       .setIssuedAt()
-      .setExpirationTime('2h') // Extended session to 2 hours
+      .setExpirationTime('2h')
       .sign(secret);
 
-    const response = NextResponse.json({ success: true });
-    response.cookies.set('session', token, {
+    // Set the session cookie
+    cookies().set('session', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       maxAge: 60 * 60 * 2, // 2 hours
@@ -29,7 +30,8 @@ export async function POST(request: Request) {
       sameSite: 'lax',
     });
 
-    return response;
+    // Redirect to the admin page
+    return NextResponse.redirect(new URL('/admin', process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'));
   }
 
   return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 });

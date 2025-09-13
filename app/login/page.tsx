@@ -34,7 +34,7 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
-        router.push('/admin');
+        router.refresh(); // Refresh the page to reflect the new session state
       } else {
         const data = await response.json();
         setError(data.error || 'Login failed');

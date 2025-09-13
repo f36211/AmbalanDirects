@@ -88,10 +88,7 @@ export default function AdminPage() {
     }
   };
 
-  const handleLogout = async () => {
-    await fetch('/api/auth/logout', { method: 'POST' });
-    router.push('/login');
-  };
+  
 
   const isValidUrl = (url: string) => {
     try {
@@ -130,15 +127,16 @@ export default function AdminPage() {
                 View Site
               </Button>
             </Link>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={handleLogout}
-              className="gap-2 text-gray-600 hover:text-gray-900"
-            >
-              <LogOut className="w-4 h-4" />
-              Logout
-            </Button>
+            <Link href="/api/auth/logout">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="gap-2 text-gray-600 hover:text-gray-900"
+              >
+                <LogOut className="w-4 h-4" />
+                Logout
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
