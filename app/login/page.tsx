@@ -33,14 +33,17 @@ export default function LoginPage() {
         body: JSON.stringify({ username, password }),
       });
 
-      if (response.ok) {
-        router.refresh(); // Refresh the page to reflect the new session state
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // On successful login, Next.js Router will automatically handle the session
+        // and the middleware will redirect to the admin page.
+        router.push('/admin');
       } else {
-        const data = await response.json();
-        setError(data.error || 'Login failed');
+        setError(data.error || 'An unknown error occurred.');
       }
-    } catch {
-      setError('An unexpected error occurred.');
+    } catch (err) {
+      setError('Could not connect to the server. Please try again later.');
     } finally {
       setIsLoading(false);
     }
@@ -61,6 +64,7 @@ export default function LoginPage() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
+              disabled={isLoading}
             />
             <div className="relative">
               <Input
@@ -69,6 +73,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                disabled={isLoading}
               />
               <Button
                 type="button"
@@ -76,18 +81,19 @@ export default function LoginPage() {
                 size="sm"
                 className="absolute right-0 top-0 h-full px-3"
                 onClick={() => setShowPassword(!showPassword)}
+                disabled={isLoading}
               >
                 {showPassword ? 'Hide' : 'Show'}
               </Button>
             </div>
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && <p className="text-red-500 text-sm font-medium p-3 bg-red-50 rounded-md">{error}</p>}
             <Button type="submit" disabled={isLoading}>
               {isLoading ? 'Logging in...' : 'Login'}
             </Button>
           </form>
           <div className="mt-4 text-center">
             <Link href="/" passHref>
-              <Button variant="link">Back to Home</Button>
+              <Button variant="link" disabled={isLoading}>Back to Home</Button>
             </Link>
           </div>
         </CardContent>

@@ -4,16 +4,19 @@ import { SignJWT } from 'jose';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const username = body?.username;
-    const password = body?.password;
+    const { username, password } = body;
+
+    if (!username || !password) {
+      return NextResponse.json({ error: 'Username and password are required' }, { status: 400 });
+    }
 
     const adminUser = process.env.ADMIN_USERNAME;
     const adminPass = process.env.ADMIN_PASSWORD;
     const jwtSecret = process.env.JWT_SECRET;
 
     if (!adminUser || !adminPass || !jwtSecret) {
-      console.error('Missing ADMIN_USERNAME, ADMIN_PASSWORD or JWT_SECRET in env');
-      return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 });
+      console.error('Authentication environment variables are not set.');
+      return NextResponse.json({ error: 'Internal Server Error: Server is not configured for authentication.' }, { status: 500 });
     }
 
     if (username === adminUser && password === adminPass) {
@@ -24,11 +27,11 @@ export async function POST(request: Request) {
         .setExpirationTime('2h')
         .sign(secret);
 
-      const response = NextResponse.redirect(new URL('/admin', process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'));
+      const response = NextResponse.json({ success: true, message: 'Login successful' });
       response.cookies.set('session', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        maxAge: 60 * 60 * 2,
+        maxAge: 60 * 60 * 2, // 2 hours
         path: '/',
         sameSite: 'lax',
       });
@@ -37,8 +40,10 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 });
+
   } catch (err) {
-    return NextResponse.json({ error: 'Bad request' }, { status: 400 });
+    console.error('Login API error:', err);
+    return NextResponse.json({ error: 'An unexpected error occurred.' }, { status: 500 });
   }
 }
 

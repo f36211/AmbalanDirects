@@ -18,8 +18,8 @@ interface JwtPayload {
 const getJwtSecretKey = (): Uint8Array => {
   const secret = process.env.JWT_SECRET;
   if (!secret) {
-    // This will cause the middleware to fail safely if the secret is missing.
-    throw new Error('CRITICAL: JWT_SECRET environment variable is not defined.');
+    console.error('CRITICAL: JWT_SECRET environment variable is not defined.');
+    throw new Error('JWT_SECRET environment variable is not defined.');
   }
   return new TextEncoder().encode(secret);
 };
@@ -28,36 +28,37 @@ const getJwtSecretKey = (): Uint8Array => {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const sessionToken = request.cookies.get('session')?.value;
-
-  
+  console.log(`Middleware triggered for path: ${pathname}`);
 
   // --- Redirect logged-in users from the login page ---
   if (pathname === '/login') {
     if (sessionToken) {
       try {
         await jwtVerify(sessionToken, getJwtSecretKey());
-        // Token is valid, redirect away from login.
+        console.log('User is already logged in. Redirecting from /login to /admin.');
         return NextResponse.redirect(new URL('/admin', request.url));
       } catch (error) {
-        // Token is invalid. Clear the cookie and let user proceed to login.
+        console.log('Invalid token found. Clearing cookie and allowing access to /login.');
         const response = NextResponse.next();
         response.cookies.delete('session');
         return response;
       }
     }
+    console.log('No session token found. Allowing access to /login.');
     return NextResponse.next();
   }
 
   // --- Protect all admin routes ---
   if (pathname.startsWith('/admin')) {
     if (!sessionToken) {
-      // If no session token exists, redirect to the login page.
+      console.log('No session token, redirecting to login.');
       return NextResponse.redirect(new URL('/login', request.url));
     }
 
     try {
       // 1. Verify the incoming token.
       const { payload } = await jwtVerify<JwtPayload>(sessionToken, getJwtSecretKey());
+      console.log('JWT verification successful. Payload:', payload);
 
       // 2. Refresh the token to extend the user's session ("sliding session").
       const response = NextResponse.next();
@@ -76,6 +77,7 @@ export async function middleware(request: NextRequest) {
         sameSite: 'lax',
       });
       
+      console.log('Token refreshed. Allowing access to admin route.');
       // 4. Allow the request to proceed to the admin page.
       return response;
 
